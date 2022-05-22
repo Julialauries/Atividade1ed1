@@ -1,0 +1,73 @@
+package pilhas;
+
+import java.util.Scanner;
+
+public class Metodos_Pilha {
+
+    int qntd;
+    int topo;
+    int m = 100;
+    int prefix;
+    String[] vetor = new String[m];
+
+    void iniciaPilha(Metodos_Pilha p) {
+        p.topo = -1;
+        qntd = 0;
+
+    }
+    
+    void empilhar(Metodos_Pilha P, String elemento) {
+        if (topo == m) {
+            System.out.println("Erro! – Pilha cheia");
+        } else {
+            topo++;
+            vetor[topo] = elemento;
+            qntd++;
+        }
+
+    }
+ /* remove elemento*/ 
+    void remove_ele(Metodos_Pilha P) {
+        if (topo == -1) {
+            System.out.println("Elemento removido");
+        } else {
+            topo--;
+            qntd--;
+        }
+    }
+
+    
+ /* esvazia pilha*/
+    void esvazia_pilha(Metodos_Pilha P) {
+        if (this.qntd == 0) {
+            System.out.println("Pilha esvaziada");
+        } else {
+        this.topo = -1;
+        qntd = -1;
+        }
+    }
+    
+    
+    void mostrar_Pilha(Metodos_Pilha p) {
+        System.out.println("Itens da pilha:");
+        for (int i = topo; i >= 0; i--) {
+            if (vetor[i] != null) {
+                System.out.println(vetor[i]);
+            }              
+           
+       }
+}
+
+    String ultimo_ele(Metodos_Pilha P) {
+        System.out.println("Elemento do topo: " + vetor[P.topo]);
+        return vetor[P.topo];
+    }  
+     
+        void contar(Metodos_Pilha p) {
+            return vetor[P.qntd++];
+            }              
+           
+       }
+
+
+ 

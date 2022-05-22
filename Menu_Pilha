@@ -1,0 +1,72 @@
+
+package pilhas;
+
+import java.util.Scanner;
+
+public class Menu_Pilha {
+
+    Scanner leia = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Menu_Pilha M = new Menu_Pilha();
+        M.menu();
+        M.estrutura();
+    }
+
+    void menu() {
+        System.out.print("\nESCOLHA UMA opção\n");
+        System.out.println(
+                "1 -  Insira algo na pilha"
+                + "\n2 - Remover elementos da Pilha " 
+                + "\n3 - Exibir elemento no topo"
+                + "\n4 - Verificar se algum elemento está na pilha"
+                + "\n5 - Esvaziar Pilha"
+		+ "\n6 - Contar elementos na pilha"
+		+ "\n0 - Sair");
+			
+        System.out.print("Opcao: ");
+
+    }
+
+    void estrutura() {
+        Metodos_Pilha Lm1 = new Metodos_Pilha();
+        Metodos_Pilha Lm2 = new Metodos_Pilha();
+        Lm1.iniciaPilha(Lm1);
+
+
+        int op = leia.nextInt();
+        while (op != 0) {
+            if (op == 1) {
+                System.out.println("Insira algo na pilha:");
+                String e1 = leia.next();
+                Lm1.empilhar(Lm1, e1);
+            }
+            if (op == 2) {
+                System.out.println("Elemento removido:");
+                Lm1.remove_ele(Lm1);
+            }
+			
+            if (op == 3) {
+                System.out.println("Topo da Pilha");
+                System.out.println(Lm1.ultimo_ele(Lm1));
+            }
+            if (op == 4) {
+                Lm1.mostrar_Pilha(Lm1);
+            }
+           
+            if (op == 5) {
+                System.out.println("Pilha Vazia:");
+                Lm1.esvazia_pilha(Lm1);
+            }
+		   
+            if (op == 6) {
+               System.out.println("A quantidade é:1");
+                Lm1.contar(Lm1);
+            }
+        
+            menu();
+            op = leia.nextInt();
+        }
+    }
+
+}

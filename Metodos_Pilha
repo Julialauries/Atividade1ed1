@@ -1,7 +1,5 @@
 package pilhas;
 
-import java.util.Scanner;
-
 public class Metodos_Pilha {
 
     int qntd;
